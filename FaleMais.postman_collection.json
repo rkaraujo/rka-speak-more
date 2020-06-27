@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "8f4b23ff-6cdc-4d78-b5cc-f078bc2582a2",
+		"name": "FaleMais",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Phone Call Cost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/phone-call/cost?sourceDDD=011&destinationDDD=016&time=20&planId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"phone-call",
+						"cost"
+					],
+					"query": [
+						{
+							"key": "sourceDDD",
+							"value": "011"
+						},
+						{
+							"key": "destinationDDD",
+							"value": "016"
+						},
+						{
+							"key": "time",
+							"value": "20"
+						},
+						{
+							"key": "planId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get plans",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/phone-plans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"phone-plans"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
