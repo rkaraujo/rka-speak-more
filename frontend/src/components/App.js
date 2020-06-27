@@ -49,7 +49,7 @@ class App extends React.Component {
                 destinationDDD: this.state.destinationDDD,
                 time: this.state.time
             },
-            timeout: 500
+            timeout: 1000
         })
             .then((resp) => {
                 const { costWithPlan, costWithoutPlan } = resp.data;

@@ -17,11 +17,15 @@ mvn package
 java -jar target/falemais-1.0.0-SNAPSHOT.jar
 ```
 
-Ou o projeto pode ser importado como um projeto Maven numa IDE como IntelliJ ou Eclipse e ser executado o main da classe /src/main/java/com/telzir/falemais/FaleMaisApplication.java.
+Ou o projeto pode ser importado como um projeto Maven numa IDE como IntelliJ ou Eclipse e ser executado o main da classe /src/main/java/com/telzir/falemais/FaleMaisApplication.java. Necessário o plugin do Lombok.
 
 Com o navegador, acessar: http://localhost:8080
 
 ![Fale Mais](fale-mais.png)
+
+Deploy feito no Heroku para visualização também:
+
+https://sheltered-hamlet-64098.herokuapp.com/
 
 ## Backend
 
