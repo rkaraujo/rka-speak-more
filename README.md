@@ -1,11 +1,12 @@
-#Fale Mais
+Fale Mais
+=========
 
 ## Como executar
 
-Foi disponibilizado o jar no diretório build:
+Foi disponibilizado o jar no diretório distribution:
 
 ```
-java -jar build/falemais-1.0.0-SNAPSHOT.jar
+java -jar distribution/falemais-1.0.0-SNAPSHOT.jar
 ```
 
 Ou usando o Maven para rodar os testes automatizados e gerar o arquivo jar:
@@ -20,17 +21,18 @@ Ou o projeto pode ser importado como um projeto Maven numa IDE como IntelliJ ou 
 
 Com o navegador, acessar: http://localhost:8080
 
+![Fale Mais](fale-mais.png)
 
 ## Backend
 
 ### Foi utilizado
 
-* Java 11
-* Spring Boot 2.3.1
-* Lombok
-* Banco de dados H2 em memória
-* Flyway para alterações de banco
-* Maven
+- Java 11
+- Spring Boot 2.3.1
+- Lombok
+- Banco de dados H2 em memória
+- Flyway para alterações de banco
+- Maven
 
 ### Endpoints
 
@@ -42,10 +44,10 @@ GET http://localhost:8080/v1/phone-call/cost
 
 Query parameters:
 
-* **sourceDDD**: DDD de origem
-* **destinationDDD**: DDD de destino
-* **time**: Tempo da ligação em minutos
-* **planId**: Id do plano escolhido
+- **sourceDDD**: DDD de origem
+- **destinationDDD**: DDD de destino
+- **time**: Tempo da ligação em minutos
+- **planId**: Id do plano escolhido
 
 Exemplo:
 
@@ -92,10 +94,10 @@ Resposta:
 
 Foi utilizado:
 
-* React
-* semantic-ui
-* Node.js
-* create-react-app
+- React
+- semantic-ui
+- Node.js
+- create-react-app
 
 Para alterações no frontend (esses passos não são necessários para rodar o projeto, pois os arquivos de build do React já foram gerados):
 
@@ -116,18 +118,18 @@ Para simplificar, o backend e frontend foram feitos no mesmo projeto.
 Foi utilizado a estrutura padrão de diretório do Maven e Spring Boot.
 
 Arquivos java do projeto (controllers, services, repositories, models, etc):
-* src/main/java
+- src/main/java
 
 Arquivos de configuração e templates:
-* src/main/resources/db/migration - arquivos sql com estrutura do banco e os dados de custos e planos
-* src/main/resources/static - arquivos gerados no build do React
+- src/main/resources/db/migration - arquivos sql com estrutura do banco e os dados de custos e planos
+- src/main/resources/static - arquivos gerados no build do React
 
 Testes:
-* src/test/java
+- src/test/java
 
 Frontend com projeto React:
 
-* frontend
-* frontend/src/components - Componentes React e seus estilos
-* frontend/src/util - Códigos auxiliares
+- frontend
+- frontend/src/components - Componentes React e seus estilos
+- frontend/src/util - Códigos auxiliares
 
