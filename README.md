@@ -53,6 +53,11 @@ Query parameters:
 - **time**: Tempo da ligação em minutos
 - **planId**: Id do plano escolhido
 
+Status:
+
+- **200**: cálculo efetuado com sucesso
+- **404**: caso o plano ou o custo não seja encontrado
+
 Exemplo:
 
 GET http://localhost:8080/v1/phone-call/cost?sourceDDD=011&destinationDDD=016&time=20&planId=1

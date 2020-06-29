@@ -10,6 +10,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -33,6 +34,35 @@ public class CallCostControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.costWithPlan", is(0)))
                 .andExpect(jsonPath("$.costWithoutPlan", is(38.0)));
+    }
+
+    @Test
+    void testCalculateCost_planNotFound() throws Exception {
+        MockHttpServletRequestBuilder request = get("/v1/phone-call/cost")
+                .queryParam("planId", "100")
+                .queryParam("sourceDDD", "011")
+                .queryParam("destinationDDD", "016")
+                .queryParam("time", "20")
+                .contentType(MediaType.APPLICATION_JSON);
+
+        mockMvc.perform(request)
+                .andExpect(status().isNotFound())
+                .andExpect(status().reason(is("Plano não encontrado")));
+    }
+
+    @Test
+    void testCalculateCost_costNotFound() throws Exception {
+        MockHttpServletRequestBuilder request = get("/v1/phone-call/cost")
+                .queryParam("planId", "1")
+                .queryParam("sourceDDD", "031")
+                .queryParam("destinationDDD", "061")
+                .queryParam("time", "20")
+                .contentType(MediaType.APPLICATION_JSON);
+
+        mockMvc.perform(request)
+                .andDo(print())
+                .andExpect(status().isNotFound())
+                .andExpect(status().reason(is("Tarifa entre os DDDs não encontrada")));
     }
 
     @Test
